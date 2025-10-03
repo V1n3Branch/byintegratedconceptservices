@@ -31,13 +31,21 @@ export default function LoginPage() {
       })
       if (error) throw error
 
+      // Get the logged-in user
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
       // Check user role and redirect accordingly
-      const { data: profile } = await supabase.from("profiles").select("role").single()
+      const { data: profile } = await supabase
+        .from("profiles")
+        .select("role")
+        .eq("id", user?.id)
+        .single();
 
       if (profile?.role === "admin") {
-        router.push("/admin")
+        router.push("/admin");
       } else {
-        router.push("/services")
+        router.push("/services");
       }
     } catch (error: unknown) {
       setError(error instanceof Error ? error.message : "An error occurred")
