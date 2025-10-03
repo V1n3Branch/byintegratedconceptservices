@@ -33,7 +33,7 @@ export function UpdateUserRole({
       .eq("id", userId)
 
     if (error) {
-      console.error("[v0] Update error:", error)
+      console.error("[mantim] Update error:", error)
       alert("Failed to update role")
     } else {
       router.refresh()

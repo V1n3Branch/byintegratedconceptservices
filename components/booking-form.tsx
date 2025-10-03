@@ -72,7 +72,7 @@ export function BookingForm({ profile, services, selectedService }: BookingFormP
       // Redirect to payment page
       router.push(`/bookings/${booking.id}/payment`)
     } catch (err: any) {
-      console.error("[v0] Booking error:", err)
+      console.error("[mantim] Booking error:", err)
       setError(err.message || "Failed to create booking")
     } finally {
       setIsLoading(false)

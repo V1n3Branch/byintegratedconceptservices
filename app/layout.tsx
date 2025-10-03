@@ -16,7 +16,7 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   title: "BY INTEGRATED CONCEPT SERVICES - Professional Auto Services",
   description: "Professional auto beauty, maintenance, car wash, and tyre services in Sokoto and Abuja",
-    generator: 'v0.app'
+  generator: "mantim",
 }
 
 export default function RootLayout({

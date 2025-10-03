@@ -60,7 +60,7 @@ export async function GET(request: Request) {
       booking_id: bookingId,
     })
   } catch (error: any) {
-    console.error("[v0] Payment verification error:", error)
+    console.error("[mantim] Payment verification error:", error)
     return NextResponse.json({ error: "Internal server error" }, { status: 500 })
   }
 }

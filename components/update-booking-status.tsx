@@ -25,7 +25,7 @@ export function UpdateBookingStatus({ bookingId, currentStatus }: { bookingId: s
       .eq("id", bookingId)
 
     if (error) {
-      console.error("[v0] Update error:", error)
+      console.error("[mantim] Update error:", error)
       alert("Failed to update status")
     } else {
       router.refresh()

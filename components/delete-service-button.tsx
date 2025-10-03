@@ -28,7 +28,7 @@ export function DeleteServiceButton({ serviceId }: { serviceId: string }) {
     const { error } = await supabase.from("services").delete().eq("id", serviceId)
 
     if (error) {
-      console.error("[v0] Delete error:", error)
+      console.error("[mantim] Delete error:", error)
       alert("Failed to delete service")
     } else {
       router.refresh()

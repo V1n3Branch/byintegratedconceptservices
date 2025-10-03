@@ -30,7 +30,7 @@ export async function POST(request: Request) {
     const paystackSecretKey = process.env.PAYSTACK_SECRET_KEY
 
     if (!paystackSecretKey) {
-      console.error("[v0] PAYSTACK_SECRET_KEY not configured")
+      console.error("[mantim] PAYSTACK_SECRET_KEY not configured")
       return NextResponse.json({ error: "Payment system not configured" }, { status: 500 })
     }
 
@@ -61,7 +61,7 @@ export async function POST(request: Request) {
     const paystackData = await paystackResponse.json()
 
     if (!paystackResponse.ok || !paystackData.status) {
-      console.error("[v0] Paystack error:", paystackData)
+      console.error("[mantim] Paystack error:", paystackData)
       return NextResponse.json({ error: paystackData.message || "Payment initialization failed" }, { status: 500 })
     }
 
@@ -79,7 +79,7 @@ export async function POST(request: Request) {
       reference: paystackData.data.reference,
     })
   } catch (error: any) {
-    console.error("[v0] Payment initialization error:", error)
+    console.error("[mantim] Payment initialization error:", error)
     return NextResponse.json({ error: "Internal server error" }, { status: 500 })
   }
 }

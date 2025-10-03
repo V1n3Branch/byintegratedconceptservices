@@ -45,7 +45,7 @@ export function PaymentForm({ booking }: PaymentFormProps) {
         window.location.href = data.authorization_url
       }
     } catch (err: any) {
-      console.error("[v0] Payment error:", err)
+      console.error("[mantim] Payment error:", err)
       setError(err.message || "Failed to process payment")
       setIsProcessing(false)
     }

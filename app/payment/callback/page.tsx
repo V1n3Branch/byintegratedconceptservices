@@ -40,7 +40,7 @@ export default function PaymentCallbackPage() {
           setError("Payment was not successful")
         }
       } catch (err: any) {
-        console.error("[v0] Verification error:", err)
+        console.error("[mantim] Verification error:", err)
         setStatus("failed")
         setError(err.message || "Failed to verify payment")
       }

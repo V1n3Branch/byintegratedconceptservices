@@ -62,7 +62,7 @@ export function ServiceForm({ categories, service }: ServiceFormProps) {
       router.push("/admin/services")
       router.refresh()
     } catch (err: any) {
-      console.error("[v0] Service form error:", err)
+      console.error("[mantim] Service form error:", err)
       setError(err.message || "Failed to save service")
     } finally {
       setIsLoading(false)
